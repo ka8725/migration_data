@@ -50,8 +50,10 @@ To keep your migrations working don't forget to write test foe them.
 Possible `RSpec` test for the migration looks like this:
 
 ```ruby
+
 require 'spec_helper'
-require Rails.root.join(ActiveRecord::Migrator.migrations_paths).join('20130906111511_create_users.rb')
+require 'migration_data/testing'
+require_migration 'create_users'
 
 desribe CreateUsers do
   describe '#data' do
@@ -61,6 +63,9 @@ desribe CreateUsers do
   end
 end
 ```
+
+The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it
+to have access to this convinient require extension.
 
 ## Contributing
 
