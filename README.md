@@ -46,7 +46,7 @@ NOTE: it's not run on `down`. If you have any reason to do it please fell free t
 
 ## Testing migrations
 
-To keep your migrations working don't forget to write test foe them.
+To keep your migrations working don't forget to write tests for them.
 Possible `RSpec` test for the migration looks like this:
 
 ```ruby
