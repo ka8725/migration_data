@@ -9,5 +9,5 @@ def require_migration(migration_name)
 
   raise LoadError, "cannot load such file -- #{migration_name}" unless file
 
-  require Rails.root.join(file.filename)
+  require file.filename
 end

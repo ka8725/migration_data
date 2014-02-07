@@ -1,12 +1,5 @@
+require 'active_record'
 require 'migration_data/version'
+require 'migration_data/active_record/migration'
 
-module MigrationData
-  def exec_migration(conn, direction)
-    super
-    if direction == :up && respond_to?(:data)
-      data
-    end
-  end
-end
-
-ActiveRecord::Migration.prepend(MigrationData)
+ActiveRecord::Migration.send(:include, MigrationData::ActiveRecord::Migration)
