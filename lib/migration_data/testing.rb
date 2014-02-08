@@ -1,3 +1,5 @@
+require 'rails'
+
 def require_migration(migration_name)
   path = ActiveRecord::Migrator.migrations_path
   all_migrations = ActiveRecord::Migrator.migrations(path)
@@ -9,5 +11,5 @@ def require_migration(migration_name)
 
   raise LoadError, "cannot load such file -- #{migration_name}" unless file
 
-  require file.filename
+  require Rails.root.join(file.filename)
 end
