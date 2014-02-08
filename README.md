@@ -10,7 +10,7 @@ some techniques which help to avoid these pitfalls. For example, define model
 classes in the migrations or write raw SQL. But they don't help in 100% cases anyway.
 This gem promises to solve the problem in a simple way.
 
-Currently the gem supports Rails 4 and Ruby >= 2.0.
+Currently the gem supports Rails 4.
 
 If you still don't understand what for this gem please check out [this blob post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
 
