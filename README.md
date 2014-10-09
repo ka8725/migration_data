@@ -5,14 +5,14 @@
 This gem provides functionality to write any code in migrations safely without regression.
 
 Sometimes we have to write some Rails code in the migrations and it's hard to
-keep them in working state because models wich are used there changes too often. there
+keep them in a working state because models which are used there change too often. There are
 some techniques which help to avoid these pitfalls. For example, define model
-classes in the migrations or write raw SQL. But they don't help in 100% cases anyway.
-This gem promises to solve the problem in a simple way.
+classes in the migrations or write raw SQL. But they don't help in 100% of all cases.
+This gem promises to solve this problem in a simple way.
 
 Currently the gem supports Rails 4.
 
-If you still don't understand what for this gem please check out [this blob post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
+If you still don't understand what this gem is for please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
 
 ## Installation
 
@@ -46,7 +46,7 @@ end
 
 That's it. Now when you run migrations with the `rake db:migrate` command the `data` method will be run on `up`.
 
-NOTE: it's not run on `down`. If you have any reason to do it please fell free to make pull request.
+NOTE: it's not run on `down`. If you have any reason to do it please feel free to make a pull request.
 
 ## Testing migrations
 
