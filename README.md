@@ -50,11 +50,9 @@ NOTE: it's not run on `down`. If you have any reason to do it please feel free t
 
 ## Testing migrations
 
-To keep your migrations working don't forget to write tests for them.
-Possible `RSpec` test for the migration looks like this:
+To keep your migrations working don't forget to write tests for them. It's preferably to put the tests for migrations into `spec/db/migrations` folder, but actually it's up to you. Possible `RSpec` test (`spec/db/migratios/create_user.rb`) for the migration looks like this:
 
 ```ruby
-
 require 'spec_helper'
 require 'migration_data/testing'
 require_migration 'create_users'
