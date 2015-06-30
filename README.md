@@ -57,10 +57,10 @@ require 'spec_helper'
 require 'migration_data/testing'
 require_migration 'create_users'
 
-desribe CreateUsers do
+describe CreateUsers do
   describe '#data' do
     it 'works' do
-      expect { CreateUsers.new.data }.to_not raise_exception
+      expect { described_class.new.data }.to_not raise_exception
     end
   end
 end
