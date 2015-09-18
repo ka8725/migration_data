@@ -6,6 +6,7 @@ module MigrationData
           def exec_migration_with_data(conn, direction)
             origin_exec_migration(conn, direction)
             data if direction == :up && respond_to?(:data)
+            rollback if direction == :down && respond_to?(:rollback)
           end
 
           alias origin_exec_migration exec_migration
