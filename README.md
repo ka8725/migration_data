@@ -41,12 +41,15 @@ class CreateUsers < ActiveRecord::Migration
   def data
     User.create!(name: 'Andrey', email: 'ka8725@gmail.com')
   end
+
+  def rollback
+    User.find_by(name: 'Andrey', email: 'ka8725@gmail.com').destroy
+  end
 end
 ```
 
 That's it. Now when you run migrations with the `rake db:migrate` command the `data` method will be run on `up`.
-
-NOTE: it's not run on `down`. If you have any reason to do it please feel free to make a pull request.
+When you rollback migrations with the `rake db:rollback` command the `rollback` method will be run on `down`.
 
 ## Testing migrations
 
@@ -61,6 +64,12 @@ describe CreateUsers do
   describe '#data' do
     it 'works' do
       expect { described_class.new.data }.to_not raise_exception
+    end
+  end
+
+  describe '#rollback' do
+    it 'works' do
+      expect { described_class.new.rollback }.to_not raise_exception
     end
   end
 end
