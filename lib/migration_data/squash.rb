@@ -15,7 +15,7 @@ module MigrationData
         <<-MIGRATION.gsub(/^ {10}/, '')
           class CreateSchema < ActiveRecord::Migration
             def change
-              #{MigrationData::ActiveRecord::SchemaDumper.dump.string}
+            #{MigrationData::ActiveRecord::SchemaDumper.dump.string.strip.gsub(/^/, '  ')}
             end
           end
         MIGRATION
