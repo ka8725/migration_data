@@ -75,8 +75,11 @@ describe CreateUsers do
 end
 ```
 
-The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it
-to have access to this convinient require extension.
+The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convinient require extension.
+
+## Clean old migration
+
+Once you are tired maintaining your old migrations you can clean up the old migrations. Use `rake db:migrate:squash` for this. The task will remove all old your migrations and will generate one migration with current database schema. You don't have to run migrations after this because the generated migration will have the latest database version.
 
 ## Contributing
 
