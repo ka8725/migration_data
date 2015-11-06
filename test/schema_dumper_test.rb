@@ -1,14 +1,6 @@
 require 'test_helper'
 require 'migration_data/active_record/schema_dumper'
 
-class CreateTableMigration < ActiveRecord::Migration
-  def change
-    create_table :users, force: true do |t|
-      t.string :name
-    end
-  end
-end
-
 describe MigrationData::ActiveRecord::SchemaDumper do
   before do
     CreateTableMigration.new.migrate(:up)

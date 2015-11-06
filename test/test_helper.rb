@@ -1,4 +1,7 @@
 require 'minitest/autorun'
 require 'migration_data'
+require 'rails'
+
+Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].each { |f| require f }
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'tmp/test.sqlite3')
