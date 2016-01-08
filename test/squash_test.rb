@@ -17,7 +17,7 @@ describe MigrationData::Squash do
       assert_equal <<-MIGRATION, File.read(db_path.join('100500_create_schema.rb'))
 class CreateSchema < ActiveRecord::Migration
   def change
-    create_table \"users\", force: :cascade do |t|
+    create_table \"users\", force: #{FOURCE_MIGRATION} do |t|
       t.string \"name\"
     end
   end

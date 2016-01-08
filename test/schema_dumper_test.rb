@@ -10,7 +10,7 @@ describe MigrationData::ActiveRecord::SchemaDumper do
     it 'squashes the schema' do
       stream = MigrationData::ActiveRecord::SchemaDumper.dump
       assert_equal <<-SCHEMA, stream.string
-  create_table \"users\", force: :cascade do |t|
+  create_table \"users\", force: #{FOURCE_MIGRATION} do |t|
     t.string \"name\"
   end
 
