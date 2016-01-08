@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
                           some techniques which help to avoid these pitfalls. For example, define model
                           classes in the migrations or write raw SQL. But they don't help in 100% cases anyway.
                           This gem promises to solve the problem in a simple way.}
-  spec.homepage      = ""
+  spec.homepage      = "http://railsguides.net/change-data-in-migrations-like-a-boss/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -23,6 +23,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency 'bundler', '~> 1.5'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'rake', '~> 0'
+  spec.add_development_dependency 'sqlite3', '~> 0'
 end
