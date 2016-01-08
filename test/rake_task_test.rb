@@ -19,7 +19,7 @@ describe 'db:schema:squash' do
       assert_equal <<-MIGRATION, File.read(latest_migration)
 class CreateSchema < ActiveRecord::Migration
   def change
-    create_table \"users\", force: :cascade do |t|
+    create_table \"users\", force: #{FOURCE_MIGRATION} do |t|
       t.string \"name\"
     end
   end
