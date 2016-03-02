@@ -30,7 +30,7 @@ Or install it yourself as:
 
 ## Usage
 
-Just define in your migration `data` method:
+In your migration define a `data` method:
 
 ```ruby
 class CreateUsers < ActiveRecord::Migration
@@ -71,7 +71,7 @@ describe CreateUsers do
     before do
       described_class.new.data
     end
-  
+
     it 'works' do
       expect { described_class.new.rollback }.to_not raise_exception
     end
@@ -83,7 +83,7 @@ The helper to load migrations `require_migration` is defined in the `migration_d
 
 ## Clean old migration
 
-Once you are tired maintaining your old migrations you can clean up the old migrations. Use `rake db:migrate:squash` for this. The task will remove all old your migrations and will generate one migration with current database schema. You don't have to run migrations after this because the generated migration will have the latest database version.
+Use `rake db:migrate:squash` to remove all your old migrations and generate one migration with the current database schema. You don't have to run migrations after this because the generated migration will have the latest database version.
 
 ## Contributing
 
