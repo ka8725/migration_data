@@ -1,3 +1,5 @@
+require 'yaml'
+
 class RailsApp < Rails::Application
 end
 
