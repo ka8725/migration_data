@@ -1,0 +1,8 @@
+base: &base
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+development:
+  <<: *base
+test:
+  <<: *base
