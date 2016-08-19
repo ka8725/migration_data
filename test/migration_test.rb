@@ -17,25 +17,28 @@ describe MyMigration do
     @migration = MyMigration.new
   end
 
-  describe '#migrate' do
-    it 'runs #data on up direction' do
-      @migration.migrate(:up)
-      assert @migration.migrated_data
-    end
+  unless ENV['RAILS_ENV'] == 'test'
+    describe '#migrate' do
+      it 'runs #data on up direction' do
+        @migration.migrate(:up)
+        assert @migration.migrated_data
+      end
 
-    it "doesn't run #data on down direction" do
-      @migration.migrate(:down)
-      assert_nil @migration.migrated_data
-    end
+      it "doesn't run #data on down direction" do
+        @migration.migrate(:down)
+        assert_nil @migration.migrated_data
+      end
 
-    it 'runs #rollback on down direction' do
-      @migration.migrate(:down)
-      assert @migration.rolled_back_data
-    end
+      it 'runs #rollback on down direction' do
+        @migration.migrate(:down)
+        assert @migration.rolled_back_data
+      end
 
-    it "doesn't run #rollback on up direction" do
-      @migration.migrate(:up)
-      assert_nil @migration.rolled_back_data
+      it "doesn't run #rollback on up direction" do
+        @migration.migrate(:up)
+        assert_nil @migration.rolled_back_data
+      end
     end
   end
+  
 end
