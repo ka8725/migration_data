@@ -1,6 +1,6 @@
 # MigrationData
 
-[![Build Status](https://travis-ci.org/ka8725/migration_data.png?branch=master)](https://travis-ci.org/ka8725/migration_data)
+[![Build Status](https://travis-ci.org/ka8725/migration_data.svg?branch=master)](https://travis-ci.org/ka8725/migration_data)
 
 This gem provides functionality to write any code in migrations safely without regression.
 
