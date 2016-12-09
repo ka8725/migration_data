@@ -1,6 +1,16 @@
 module MigrationData
   module ActiveRecord
     module Migration
+      class << self
+        def migration_dirs
+          ::ActiveRecord::Tasks::DatabaseTasks.migrations_paths
+        end
+
+        def migration_dir
+          migration_dirs.first
+        end
+      end
+
       def self.included(base)
         base.class_eval do
           def exec_migration_with_data(conn, direction)

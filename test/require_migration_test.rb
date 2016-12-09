@@ -9,14 +9,14 @@ describe '#require_migration' do
 
   it 'loads existed migation' do
     Rails.stub(:root, db_path) do
-      ActiveRecord::Migrator.stub(:migrations_path, db_path) do
+      MigrationData::ActiveRecord::Migration.stub(:migration_dir, db_path) do
         require_migration 'test_migration'
       end
     end
   end
 
   it 'raises exception on load unexisted migration' do
-    ActiveRecord::Migrator.stub(:migrations_path, db_path) do
+    MigrationData::ActiveRecord::Migration.stub(:migration_dir, db_path) do
       assert_raises LoadError, 'cannot load such file -- test_migration2.rb' do
         require_migration('test_migration2')
       end
