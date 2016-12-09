@@ -1,7 +1,7 @@
 require 'rails'
 
 def require_migration(migration_name)
-  path = ActiveRecord::Migrator.migrations_path
+  path = MigrationData::ActiveRecord::Migration.migration_dir
   all_migrations = ActiveRecord::Migrator.migrations(path)
 
   migration_name += '.rb' unless migration_name.end_with?('.rb')

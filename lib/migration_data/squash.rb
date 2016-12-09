@@ -35,11 +35,11 @@ module MigrationData
     end
 
     def migration_dirs
-      ::ActiveRecord::Tasks::DatabaseTasks.migrations_paths
+      MigrationData::ActiveRecord::Migration.migration_dirs
     end
 
     def migration_dir
-      migration_dirs.first
+      MigrationData::ActiveRecord::Migration.migration_dir
     end
 
     def migration_file_name
