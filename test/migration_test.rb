@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MyMigration < ActiveRecord::Migration
+class MyMigration < ActiveRecord::Migration[4.2]
   attr_reader :migrated_data, :rolled_back_data
 
   def data
