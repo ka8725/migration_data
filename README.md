@@ -85,6 +85,13 @@ The helper to load migrations `require_migration` is defined in the `migration_d
 
 Use `rake db:migrate:squash` to remove all your old migrations and generate one migration with the current database schema. You don't have to run migrations after this because the generated migration will have the latest database version.
 
+## Skipping data migration on test environment
+
+If you run migration in test environment, data migration might try to add same data that you already have in seeds.
+In this case your migrations might fall with duplication error.
+
+`MigrationData.config.skip_data_on_test = true` setting will skip data migrations in test environment.
+
 ## Contributing
 
 1. Fork it ( http://github.com/ka8725/migration_data/fork )

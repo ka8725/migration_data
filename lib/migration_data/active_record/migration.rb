@@ -16,6 +16,7 @@ module MigrationData
           def exec_migration_with_data(conn, direction)
             origin_exec_migration(conn, direction)
             ::ActiveRecord::Base.connection.schema_cache.clear!
+            return if Rails.env.test? && MigrationData.config.skip_data_on_test
             data if direction == :up && respond_to?(:data)
             rollback if direction == :down && respond_to?(:rollback)
           end
