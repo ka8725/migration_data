@@ -51,6 +51,8 @@ end
 That's it. Now when you run migrations with the `rake db:migrate` command the `data` method will be run on `up`.
 When you rollback migrations with the `rake db:rollback` command the `rollback` method will be run on `down`.
 
+> Note: in some circumstances, the `reset_column_information` method should be called on a model which table is changed in the migration. Especially when you are certain that there should be present some column for a model but it's absent for some reason. Read more about this in the [official Rails docs](http://guides.rubyonrails.org/v4.1/migrations.html#using-models-in-your-migrations).
+
 ## Testing migrations
 
 To keep your migrations working don't forget to write tests for them. It's preferably to put the tests for migrations into `spec/db/migrations` folder, but actually it's up to you. Possible `RSpec` test (`spec/db/migrations/create_user.rb`) for the migration looks like this:
