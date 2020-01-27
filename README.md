@@ -83,10 +83,6 @@ end
 
 The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convinient require extension.
 
-## Clean old migration
-
-Use `rake db:migrate:squash` to remove all your old migrations and generate one migration with the current database schema. You don't have to run migrations after this because the generated migration will have the latest database version.
-
 ## Contributing
 
 1. Fork it ( http://github.com/ka8725/migration_data/fork )
