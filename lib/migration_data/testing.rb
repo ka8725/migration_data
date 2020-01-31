@@ -17,6 +17,8 @@ end
 def all_migrations(path)
   if Rails::VERSION::MAJOR >= 5 && Rails::VERSION::MINOR >= 2
     ActiveRecord::MigrationContext.new(path).migrations
+  elsif Rails::VERSION::MAJOR > 5
+    ActiveRecord::MigrationContext.new(path, nil).migrations
   else
     ActiveRecord::Migrator.migrations(path)
   end
