@@ -85,9 +85,9 @@ The helper to load migrations `require_migration` is defined in the `migration_d
 
 ## Skipping data migrations execution
 
-At some point one might realize that data migrations should not run on particular environments, e.g. test.
+At some point, one might realize that data migrations should not run on particular environments, e.g. `test`.
 
-On performing migrations in test environment, a data migration might try to add same data that has already been added by seeds. In that case migrations might fail with a duplication error.
+On performing migrations in `test` environment, a data migration might try to add the same data that has already been added by seeds. In that case, migrations might fail with a duplication error.
 
 Use `MigrationData.config.skip = true` to skip data migrations execution. One might put this code in an initializer, e.g. `config/initializers/migration_data.rb`:
 
