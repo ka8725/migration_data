@@ -38,4 +38,24 @@ describe MyMigration do
       assert_nil @migration.rolled_back_data
     end
   end
+
+  describe "#migrate with Rails.env = test and skip_data_on_test = true" do
+    before do
+      @old_skip, MigrationData.config.skip_data_on_test = MigrationData.config.skip_data_on_test, true
+    end
+
+    after do
+      MigrationData.config.skip_data_on_test = @old_skip
+    end
+
+    it "doesn't runs #data" do
+      @migration.migrate(:up)
+      refute @migration.migrated_data
+    end
+
+    it "doesn't runs #rollback" do
+      @migration.migrate(:down)
+      refute @migration.rolled_back_data
+    end
+  end
 end

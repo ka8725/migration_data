@@ -83,6 +83,14 @@ end
 
 The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convinient require extension.
 
+## Skipping data migration in test environment  
+
+On performing migrations in test environment, a data migration might try to add same data that is already added by seeds. In that case the migration fails with a duplication error.
+
+In this case your migrations might fall with duplication error.
+
+Use `MigrationData.config.skip = true` to skip data migrations execution. It can be helpful for the test environment, for example.
+
 ## Contributing
 
 1. Fork it ( http://github.com/ka8725/migration_data/fork )
