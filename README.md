@@ -81,15 +81,21 @@ describe CreateUsers do
 end
 ```
 
-The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convinient require extension.
+The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convenient require extension.
 
-## Skipping data migration in test environment  
+## Skipping data migrations execution
 
-On performing migrations in test environment, a data migration might try to add same data that is already added by seeds. In that case the migration fails with a duplication error.
+At some point one might realize that data migrations should not run on particular environments, e.g. test.
 
-In this case your migrations might fall with duplication error.
+On performing migrations in test environment, a data migration might try to add same data that has already been added by seeds. In that case migrations might fail with a duplication error.
 
-Use `MigrationData.config.skip = true` to skip data migrations execution. It can be helpful for the test environment, for example.
+Use `MigrationData.config.skip = true` to skip data migrations execution. One might put this code in an initializer, e.g. `config/initializers/migration_data.rb`:
+
+```ruby
+if Rails.env.test?
+  MigrationData.config.skip = true
+end
+```
 
 ## Contributing
 
