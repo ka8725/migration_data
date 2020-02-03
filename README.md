@@ -57,7 +57,9 @@ All these methods can be defined in one migration. They are executed in the foll
 - `#change/up`
 - `#data`
 - `#data_after`
+
 and on down:
+
 - `#rollback_before`
 - `#change/down`
 - `#rollback`
