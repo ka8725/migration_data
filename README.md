@@ -10,7 +10,9 @@ some techniques which help to avoid these pitfalls. For example, define model
 classes in the migrations or write raw SQL. But they don't help in 100% of all cases.
 This gem promises to solve this problem in a simple way.
 
-If you still don't understand what this gem is for please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
+In short, this gem promotes writing the code migrates data in separate methods of a schema migration. That separates concerns and allows writing tests for these methods. Also, they optionally can be skipped.
+
+If it's still not clear what this gem is for please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
 
 ## Installation
 
