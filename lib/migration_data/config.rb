@@ -1,5 +1,6 @@
 module MigrationData
-  @config = Struct.new(:skip_data_on_test).new(false)
+  @config = Struct.new(:skip).new(false)
+
   def self.config
     @config
   end
