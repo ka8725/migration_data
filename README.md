@@ -8,11 +8,12 @@ Sometimes we have to write some Rails code in the migrations and it's hard to
 keep them in a working state because models which are used there change too often. There are
 some techniques which help to avoid these pitfalls. For example, define model
 classes in the migrations or write raw SQL. But they don't help in 100% of all cases.
-This gem promises to solve this problem in a simple way.
 
-In short, this gem promotes writing the code migrates data in separate methods of a schema migration. That separates concerns and allows writing tests for these methods. Also, they optionally can be skipped.
+Moreover, data migrations may corrupt data in production. How to prevent that? This gem promises to solve this problem in a simple way.
 
-If it's still not clear what this gem is for please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
+In short, this gem promotes writing tests for data migrations providing a way allows to write code that migrates data in separate methods. That's it, having the code migrates data separately covered by proper tests eliminates those pesky situations with outdated migrations or corrupted data.
+
+If the gem purpose is still not clear please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
 
 ## Installation
 
