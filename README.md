@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ka8725/migration_data.svg?branch=master)](https://travis-ci.org/ka8725/migration_data)
 
-This gem provides functionality to write any code in migrations safely without regression.
+This gem provides functionality to write any code in migrations safely without regression or data corruption in production.
 
 Sometimes Rails migrations change not only DB schema but also data. And that code changes data might be outdated and fail. There are some techniques that help to avoid these pitfalls. For example, define model
 classes in the migrations or write raw SQL. But they don't help in all cases and don't guarantee the data integrity after migrations run.
