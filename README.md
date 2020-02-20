@@ -4,12 +4,10 @@
 
 This gem provides functionality to write any code in migrations safely without regression.
 
-Sometimes we have to write some Rails code in the migrations and it's hard to
-keep them in a working state because models which are used there change too often. There are
-some techniques which help to avoid these pitfalls. For example, define model
-classes in the migrations or write raw SQL. But they don't help in 100% of all cases.
+Sometimes Rails migrations change not only DB schema but also data. And that code changes data might be outdated and fail. There are some techniques that help to avoid these pitfalls. For example, define model
+classes in the migrations or write raw SQL. But they don't help in all cases and don't guarantee the data integrity after migrations run.
 
-Moreover, data migrations may corrupt data in production. How to prevent that? This gem promises to solve this problem in a simple way.
+Besides the fails due to outdated code, data migrations may corrupt data in production. How to prevent that? This gem promises to solve this problem at no cost.
 
 In short, this gem promotes writing tests for data migrations providing a way allows to write code that migrates data in separate methods. That's it, having the code migrates data separately covered by proper tests eliminates those pesky situations with outdated migrations or corrupted data.
 
