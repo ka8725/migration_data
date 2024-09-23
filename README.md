@@ -2,14 +2,13 @@
 
 [![Build Status](https://travis-ci.org/ka8725/migration_data.svg?branch=master)](https://travis-ci.org/ka8725/migration_data)
 
-This gem provides functionality to write any code in migrations safely without regression or data corruption in production.
+This gem offers a solution for safely writing code in migrations, ensuring no regressions or data corruption in production.
 
-Sometimes Rails migrations change not only DB schema but also data. And that code changes data might be outdated and fail. There are some techniques that help to avoid these pitfalls. For example, define model
-classes in the migrations or write raw SQL. But they don't help in all cases and don't guarantee the data integrity after migrations run.
+In some cases, Rails migrations affect not only the database schema but also the data itself. However, **the code used to modify data during migrations may become outdated and fail**. While there are techniques, like defining model classes within migrations or using raw SQL, these methods are not foolproof and can't always ensure data integrity on the migration run.
 
-Besides the fails due to outdated code, data migrations may corrupt data in production. How to prevent that? This gem promises to solve this problem at no cost.
+Beyond outdated code issues, data migrations in production can sometimes lead to data corruption. How can this be prevented? This gem addresses the problem by **offering a safeguard at no additional cost**.
 
-In short, this gem promotes writing tests for data migrations providing a way allows to write code that migrates data in separate methods. That's it, having the code migrates data separately covered by proper tests eliminates those pesky situations with outdated migrations or corrupted data.
+This gem essentially **encourages writing tests for data migrations** by allowing developers to write the data-related code in separate methods. By testing the data migration logic independently, it helps prevent problems related to outdated migrations or data corruption.
 
 If the gem purpose is still not clear please check out [this blog post](http://railsguides.net/2014/01/30/change-data-in-migrations-like-a-boss/).
 
