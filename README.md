@@ -37,11 +37,11 @@ class CreateUsers < ActiveRecord::Migration
   end
 
   def data
-    User.create!(name: 'Andrey', email: 'ka8725@gmail.com')
+    User.create!(name: 'Andrey', email: 'email@text.com')
   end
 
   def rollback
-    User.find_by(name: 'Andrey', email: 'ka8725@gmail.com').destroy
+    User.find_by(name: 'Andrey', email: 'email@text.com').destroy
   end
 end
 ```
