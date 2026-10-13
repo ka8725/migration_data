@@ -111,6 +111,14 @@ end
 
 The helper to load migrations `require_migration` is defined in the `migration_data/testing`. So you should to require it to have access to this convenient require extension.
 
+## Maintained by WideFix
+
+MigrationData was created by Andrei Kaleshka, founder of [WideFix](https://widefix.com/), a team specializing in maintaining, upgrading, and improving existing Ruby on Rails applications.
+
+Need help with data migrations or an existing Rails application? [Learn about WideFix's Rails services](https://widefix.com/services).
+
+For development databases that drift after switching Git branches, see our companion gem, [ActualDbSchema](https://widefix.com/actual-db-schema).
+
 ## Contributing
 
 1. Fork it ( http://github.com/ka8725/migration_data/fork )
